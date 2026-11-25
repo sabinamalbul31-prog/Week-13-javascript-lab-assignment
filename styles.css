@@ -1,0 +1,183 @@
+/* Global reset: include padding/border in element size */
+* {
+  box-sizing: border-box;
+}
+
+/* Images never overflow their parent */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Background Styling */
+body {
+  background-color: lightyellow; 
+  font-family: Arial, sans-serif;
+}
+
+/* Tag Selector: All paragraphs to green */
+p {
+  color: green;
+}
+
+/* Class Selector: Group Uniform */
+.alert-text {
+  color: red;
+  font-size: 20px;
+}
+
+/* ID Selector: Absolute Power */
+#main-title {
+  color: gold; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Step 1: Navigation menu alignment */
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Step 2: Side-by-side layout */
+.content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+/* Step 3: Fix image overflow */
+.card img {
+  /* max-width: 150px; */
+  max-width: 100%;
+  height: auto;
+}
+
+/* Card Layout Structure */
+.card {
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 300px;
+  background-color: white;
+  border-radius: 6px;
+}
+
+/* --- Box Model Lab --- */
+
+.box-model-lab {
+  margin-top: 0;
+  padding: 20px;
+  background-color: #f0f8ff;
+  border: 2px dashed #008080;
+  border-radius: 8px;
+}
+
+.box-container {
+  width: 300px;
+  padding: 30px;
+  border: 5px solid darkgreen;
+  margin-bottom: 20px;
+  background-color: #98fb98;
+  color: #333;
+}
+
+/* Default Box: content-box behavior */
+.default-box {
+  box-sizing: content-box;
+}
+
+/* Solver Box: border-box behavior */
+.solver-box {
+  box-sizing: border-box;
+  background-color: #ffebcd;
+  border-color: darkorange;
+}
+
+/* --- Hobbies & Gallery --- */
+
+.hobby-lab,
+.gallery-lab {
+  margin-top: 0;
+  padding: 20px;
+  min-width: 300px;
+  background-color: #f0f8ff;
+  border: 2px dashed #008080;
+  border-radius: 8px;
+}
+
+#hobby-list ul {
+  margin: 0;
+  padding-left: 24px;
+  font-size: 18px;
+}
+
+#gallery-image {
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border: 3px solid darkgreen;
+  border-radius: 6px;
+}
+
+#next-photo {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* --- Dark Mode --- */
+body.dark-mode {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode p {
+  color: #9be89b;
+}
+
+body.dark-mode .card {
+  background-color: #2b2b2b;
+  border-color: #555;
+  color: #f0f0f0;
+}
+
+body.dark-mode .box-model-lab {
+  background-color: #22303a;
+  color: #f0f0f0;
+}
+
+body.dark-mode .box-container p {
+  color: #333;
+}
+
+body.dark-mode .hobby-lab,
+body.dark-mode .gallery-lab {
+  background-color: #22303a;
+  color: #f0f0f0;
+}
+
+/* --- Mobile Layout (≤ 768px) --- */
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .card,
+  #gallery-image {
+    max-width: 100%;
+  }
+
+  /* The content-box demo is 370px wide; let it shrink so it can't cause horizontal scroll */
+  .box-container {
+    width: auto;
+  }
+
+  button {
+    min-height: 44px;
+  }
+}
